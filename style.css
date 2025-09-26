@@ -1,0 +1,134 @@
+
+.calculator {
+  width: 280px;
+  max-width: 90%;
+  margin: 30px auto;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+  height: auto;
+  background: #111;
+  color: #fff;
+  font-size: 1.8em;
+  text-align: right;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+}
+
+#display {
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 28px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 15px 0;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 6px;
+  background: #e0e0e0;
+  color: #000;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #d6d6d6;
+}
+
+button.equal {
+  background: #4caf50;
+  color: #000;
+  color: white;
+}
+
+button.equal:hover {
+  background: #45a049;
+}
+
+button.C {
+  background: #f44336;
+  color: white;
+}
+
+button.C:hover {
+  background: #e53935;
+}
+
+/* Typing text styles */
+.typing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.typing-text {
+  font-size: 26px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #333;
+  animation: typing 5.5s steps(22), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #display {
+    font-size: 24px;
+  }
+
+  .typing-text {
+    font-size: 22px;
+    animation: typing 3.5s steps(18), blink 0.5s step-end infinite alternate;
+  }
+
+  button {
+    padding: 12px 0;
+    font-size: 1em;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+}
